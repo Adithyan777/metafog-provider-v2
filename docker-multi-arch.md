@@ -1,4 +1,3 @@
-Below is a perfect Markdown document outlining the steps:
 
 ---
 
@@ -76,5 +75,3 @@ docker buildx build \
 ```
 
 ---
-
-That's it! You have now set up Docker Buildx for multi-architecture builds and pushed your image to your registry.
