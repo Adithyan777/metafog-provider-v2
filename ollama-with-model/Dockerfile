@@ -24,7 +24,12 @@ RUN apt-get update && apt-get install -y curl
 COPY --from=model-downloader /root/.ollama /root/.ollama
 
 # Add initialization script
-COPY init.sh /init.sh
+RUN echo '#!/bin/bash\n \
+ollama serve &\n \
+while ! curl -s http://localhost:11434/api/version > /dev/null; do\n \
+   echo "Waiting for Ollama server to start..."\n \
+   sleep 1\ndone\necho "Ollama server is ready..."\n \
+tail -f /dev/null' > /init.sh
 RUN chmod +x /init.sh
 
 EXPOSE 11434
