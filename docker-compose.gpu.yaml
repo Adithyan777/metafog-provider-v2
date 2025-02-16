@@ -7,6 +7,12 @@ services:
       - metafog-network
     restart: unless-stopped
     deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
       
 
   search-engine:
