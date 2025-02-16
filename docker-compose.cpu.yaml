@@ -1,0 +1,19 @@
+services:
+  llm:
+    image: docker.io/adithyn/ollama-qwen:latest
+    ports:
+      - 11434:11434
+    networks:
+      - metafog-network
+    restart: unless-stopped
+
+  search-engine:
+    image: docker.io/adithyn/searxng-custom:latest
+    ports:
+      - 11020:8080
+    networks:
+      - metafog-network
+    restart: unless-stopped
+
+networks:
+  metafog-network:
