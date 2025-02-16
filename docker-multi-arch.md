@@ -1,7 +1,10 @@
+Below is a perfect Markdown document outlining the steps:
+
 ---
 
 # Docker Buildx Multi-Architecture Build Setup
 
+This guide explains how to set up Docker Buildx for building multi-architecture images and pushing them to your Docker registry.
 
 > **Note:**  
 > - On **macOS/Windows**, Docker Desktop comes with Buildx pre-installed.  
@@ -71,3 +74,7 @@ docker buildx build \
   --push \
   .
 ```
+
+---
+
+That's it! You have now set up Docker Buildx for multi-architecture builds and pushed your image to your registry.
